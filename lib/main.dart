@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:social_media/Welcome/Welcome.dart';
+import 'package:social_media/Pages/Welcome/Welcome.dart';
 import 'package:social_media/conflig/Theme.dart';
 
 void main() {

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # social_media
 
 A new Flutter project.
@@ -14,3 +15,6 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+=======
+# Social_app
+>>>>>>> 6f40baa769ee326dbe0ddeb4ac9af335908a6d20
