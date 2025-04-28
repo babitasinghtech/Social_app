@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:slide_to_act/slide_to_act.dart';
 import 'package:social_media/conflig/String.dart';
 
@@ -12,7 +14,9 @@ class WelcomeFooterButton extends StatelessWidget {
       children: [
         SlideAction(
           // ignore: body_might_complete_normally_nullable
-          onSubmit: () {},
+          onSubmit: () {
+            Get.offAllNamed("/Authentication");
+          },
           // ignore: sized_box_for_whitespace
           sliderButtonIcon: Container(
             width: 25,
