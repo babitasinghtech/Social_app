@@ -5,6 +5,6 @@ var pagePath = [
   GetPage(
     name: "/Authentication",
     page: () => Authentication(),
-    transition: Transition.leftToRight,
+    transition: Transition.rightToLeft,
   ),
 ];
