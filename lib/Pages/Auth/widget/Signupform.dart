@@ -33,7 +33,11 @@ class Signupform extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            PrimaryButton(btnName: "SIGNUP", icon: Icons.lock_open_outlined),
+            PrimaryButton(
+              ontap: () {},
+              btnName: "SIGNUP",
+              icon: Icons.lock_open_outlined,
+            ),
           ],
         ),
       ],

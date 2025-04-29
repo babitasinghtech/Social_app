@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:social_media/conflig/String.dart';
+import 'package:social_media/conflig/images.dart';
 
 class Welcomebody extends StatelessWidget {
   const Welcomebody({super.key});
@@ -12,9 +13,9 @@ class Welcomebody extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset("Assets/images/Group 43.png"),
-            SvgPicture.asset("Assets/Icons/raphael_connect.svg"),
-            Image.asset("Assets/images/Group 44.png"),
+            Image.asset(AssetsImage.boypic),
+            SvgPicture.asset(AssetsImage.connectSVG),
+            Image.asset(AssetsImage.girlpic),
           ],
         ),
         SizedBox(height: 30),

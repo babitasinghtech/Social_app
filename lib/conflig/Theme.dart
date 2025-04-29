@@ -10,6 +10,10 @@ var darkTheme = ThemeData(
   inputDecorationTheme: InputDecorationTheme(
     fillColor: dBackgroundColor,
     filled: true,
+    border: UnderlineInputBorder(
+      borderSide: BorderSide.none,
+      borderRadius: BorderRadius.circular(15),
+    ),
   ),
   colorScheme: ColorScheme.dark(
     primary: dPrimaryColor,
@@ -36,13 +40,13 @@ var darkTheme = ThemeData(
     ),
     headlineSmall: TextStyle(
       fontSize: 20,
-      color: dPrimaryColor,
+      color: const Color.fromARGB(255, 227, 232, 242),
       fontFamily: "Poppins",
       fontWeight: FontWeight.w600,
     ),
     bodyLarge: TextStyle(
       fontSize: 18,
-      color: dOnBackgroundColor,
+      color: Colors.white,
       fontFamily: "Poppins",
       fontWeight: FontWeight.w500,
     ),

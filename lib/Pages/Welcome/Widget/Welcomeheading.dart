@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:social_media/conflig/String.dart';
+import 'package:social_media/conflig/images.dart';
 
 class WelcomeHeading extends StatelessWidget {
   const WelcomeHeading({super.key});
@@ -11,7 +12,7 @@ class WelcomeHeading extends StatelessWidget {
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [SvgPicture.asset("Assets/Icons/Vector.svg")],
+          children: [SvgPicture.asset(AssetsImage.appIconSVG)],
         ),
         SizedBox(height: 20),
         Text(

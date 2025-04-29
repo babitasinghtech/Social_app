@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:social_media/Widget/primarybutton.dart';
 
 class LoginForm extends StatelessWidget {
@@ -6,7 +7,7 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
         SizedBox(height: 40),
         TextField(
@@ -26,7 +27,13 @@ class LoginForm extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            PrimaryButton(btnName: "LOGIN", icon: Icons.lock_open_outlined),
+            PrimaryButton(
+              ontap: () {
+                Get.offAllNamed("/homePage");
+              },
+              btnName: "LOGIN",
+              icon: Icons.lock_open_outlined,
+            ),
           ],
         ),
       ],

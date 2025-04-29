@@ -10,7 +10,7 @@ class Authentication extends StatelessWidget {
     return const Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: EdgeInsets.all(20),
           child: SingleChildScrollView(
             child: Column(
               children: [

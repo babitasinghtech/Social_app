@@ -28,6 +28,7 @@ class AuthenticationPageBody extends StatelessWidget {
                         onTap: () {
                           isLogin.value = true;
                         },
+                        // ignore: sized_box_for_whitespace
                         child: Container(
                           width: MediaQuery.sizeOf(context).width / 2.5,
                           child: Column(
@@ -59,6 +60,7 @@ class AuthenticationPageBody extends StatelessWidget {
                         onTap: () {
                           isLogin.value = false;
                         },
+                        // ignore: sized_box_for_whitespace
                         child: Container(
                           width: MediaQuery.sizeOf(context).width / 2.5,
                           child: Column(
