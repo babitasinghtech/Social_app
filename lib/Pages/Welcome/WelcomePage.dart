@@ -16,6 +16,7 @@ class _WelcomePageState extends State<WelcomePage> {
     return const Scaffold(
       body: SafeArea(
         child: Padding(
+          // ignore: unnecessary_const
           padding: const EdgeInsets.all(20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,

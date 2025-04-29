@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_media/Pages/Welcome/Widget/Welcomeheading.dart';
 
 class Authentication extends StatelessWidget {
   const Authentication({super.key});
@@ -6,13 +7,57 @@ class Authentication extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    body: Column(
-      childern:[
-        WelcomeHeading(),
-      ]
-    )
-    
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: [
+              WelcomeHeading(),
+              SizedBox(height: 40),
+              Container(
+                height: 400,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Theme.of(context).colorScheme.primaryContainer,
+                ),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Column(
+                                children: [
+                                  Text(
+                                    "Login",
+                                    style:
+                                        Theme.of(context).textTheme.bodyLarge,
+                                  ),
+                                  AnimatedContainer(
+                                    duration: Duration(seconds: 2),
+                                    width: 150,
+                                    height: 5,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(100),
+                                      color:
+                                          Theme.of(context).colorScheme.primary,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
- 

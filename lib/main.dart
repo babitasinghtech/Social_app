@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-
 import 'package:social_media/Pages/Welcome/WelcomePage.dart';
 import 'package:social_media/conflig/Theme.dart';
 import 'package:social_media/conflig/pagepath.dart';
