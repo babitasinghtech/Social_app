@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:social_media/Pages/Auth/widget/Login.dart';
+import 'package:social_media/Pages/Auth/widget/Signupform.dart';
 
 class AuthenticationPageBody extends StatelessWidget {
   const AuthenticationPageBody({super.key});
@@ -18,57 +20,75 @@ class AuthenticationPageBody extends StatelessWidget {
           Expanded(
             child: Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        isLogin.value = true;
-                      },
-                      child: Column(
-                        children: [
-                          Text(
-                            "Login",
-                            style:
-                                isLogin.value
-                                    ? Theme.of(context).textTheme.bodyLarge
-                                    : Theme.of(context).textTheme.labelLarge,
+                Obx(
+                  () => Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          isLogin.value = true;
+                        },
+                        child: Container(
+                          width: MediaQuery.sizeOf(context).width / 2.5,
+                          child: Column(
+                            children: [
+                              Text(
+                                "Login",
+                                style:
+                                    isLogin.value
+                                        ? Theme.of(context).textTheme.bodyLarge
+                                        : Theme.of(
+                                          context,
+                                        ).textTheme.labelLarge,
+                              ),
+                              SizedBox(height: 5),
+                              AnimatedContainer(
+                                duration: Duration(microseconds: 200),
+                                width: isLogin.value ? 100 : 0,
+                                height: 3,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(100),
+                                  color: Theme.of(context).colorScheme.primary,
+                                ),
+                              ),
+                            ],
                           ),
-                          SizedBox(height: 5),
-                          AnimatedContainer(
-                            duration: Duration(seconds: 2),
-                            width: isLogin.value ? 100 : 0,
-                            height: 3,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(100),
-                              color: Theme.of(context).colorScheme.primary,
-                            ),
-                          ),
-                        ],
+                        ),
                       ),
-                    ),
-                    Column(
-                      children: [
-                        Text(
-                          "Sign Up",
-                          style:
-                              isLogin.value
-                                  ? Theme.of(context).textTheme.bodyLarge
-                                  : Theme.of(context).textTheme.bodyLarge,
-                        ),
-                        SizedBox(height: 5),
-                        AnimatedContainer(
-                          duration: Duration(seconds: 2),
-                          width: isLogin.value ? 0 : 100,
-                          height: 3,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(100),
-                            color: Theme.of(context).colorScheme.primary,
+                      InkWell(
+                        onTap: () {
+                          isLogin.value = false;
+                        },
+                        child: Container(
+                          width: MediaQuery.sizeOf(context).width / 2.5,
+                          child: Column(
+                            children: [
+                              Text(
+                                "Sign Up",
+                                style:
+                                    isLogin.value
+                                        ? Theme.of(context).textTheme.bodyLarge
+                                        : Theme.of(context).textTheme.bodyLarge,
+                              ),
+                              SizedBox(height: 5),
+                              AnimatedContainer(
+                                duration: Duration(milliseconds: 200),
+                                width: isLogin.value ? 0 : 100,
+                                height: 3,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(100),
+                                  color: Theme.of(context).colorScheme.primary,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                      ],
-                    ),
-                  ],
+                      ),
+                    ],
+                  ),
+                ),
+                Obx(
+                  () => isLogin.value ? const LoginForm() : const Signupform(),
                 ),
               ],
             ),

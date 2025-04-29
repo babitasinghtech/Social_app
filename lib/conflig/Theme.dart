@@ -7,9 +7,13 @@ var lightTheme = ThemeData();
 var darkTheme = ThemeData(
   brightness: Brightness.dark,
   useMaterial3: true,
+  inputDecorationTheme: InputDecorationTheme(
+    fillColor: dBackgroundColor,
+    filled: true,
+  ),
   colorScheme: ColorScheme.dark(
     primary: dPrimaryColor,
-    onPrimary: dOnBackgroundColor,
+    onPrimary: const Color.fromARGB(255, 248, 248, 248),
     // ignore: deprecated_member_use
     background: dBackgroundColor,
     // ignore: deprecated_member_use
