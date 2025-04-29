@@ -26,6 +26,7 @@ class Authentication extends StatelessWidget {
                       child: Column(
                         children: [
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Column(
                                 children: [
@@ -34,10 +35,31 @@ class Authentication extends StatelessWidget {
                                     style:
                                         Theme.of(context).textTheme.bodyLarge,
                                   ),
+                                  SizedBox(height: 5),
                                   AnimatedContainer(
                                     duration: Duration(seconds: 2),
-                                    width: 150,
-                                    height: 5,
+                                    width: 100,
+                                    height: 3,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(100),
+                                      color:
+                                          Theme.of(context).colorScheme.primary,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                children: [
+                                  Text(
+                                    "Sign Up",
+                                    style:
+                                        Theme.of(context).textTheme.bodyLarge,
+                                  ),
+                                  SizedBox(height: 5),
+                                  AnimatedContainer(
+                                    duration: Duration(seconds: 2),
+                                    width: 100,
+                                    height: 3,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(100),
                                       color:
