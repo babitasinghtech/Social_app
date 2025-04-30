@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-// ignore: unnecessary_import
-import 'package:get/get_core/src/get_main.dart';
 import 'package:slide_to_act/slide_to_act.dart';
 import 'package:social_media/conflig/String.dart';
 import 'package:social_media/conflig/images.dart';

@@ -19,10 +19,6 @@ class _SplashpageState extends State<Splashpage> {
           style: Theme.of(context).textTheme.headlineSmall,
         ),
       ),
-      body: Column(children: [
-          
-        ],
-      ),
     );
   }
 }

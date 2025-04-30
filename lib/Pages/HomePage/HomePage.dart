@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:social_media/Pages/HomePage/widget/ChatList.dart';
 import 'package:social_media/Pages/HomePage/widget/Tabbar.dart';
 import 'package:social_media/conflig/String.dart';
+import 'package:social_media/conflig/images.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -24,7 +25,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         ),
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: SvgPicture.asset("Assets/Icons/Vector.svg", width: 20),
+          child: SvgPicture.asset(AssetsImage.appIconSVG, width: 20),
         ),
         actions: [
           IconButton(onPressed: () {}, icon: Icon(Icons.search)),

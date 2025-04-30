@@ -1,6 +1,6 @@
 class AssetsImage {
-  static const iconsPath = "assets/icons/";
-  static const imagesPath = "assets/images/";
+  static const iconsPath = "Assets/Icons/";
+  static const imagesPath = "Assets/images/";
 
   // SVG Icons
   static const appIconSVG = "${iconsPath}Vector.svg";

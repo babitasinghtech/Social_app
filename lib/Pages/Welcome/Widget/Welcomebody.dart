@@ -13,9 +13,9 @@ class Welcomebody extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(AssetsImage.boypic),
-            SvgPicture.asset(AssetsImage.connectSVG),
-            Image.asset(AssetsImage.girlpic),
+            Image.asset(AssetsImage.boypic, width: 100),
+            SvgPicture.asset(AssetsImage.connectSVG, width: 50),
+            Image.asset(AssetsImage.girlpic, width: 100),
           ],
         ),
         SizedBox(height: 30),

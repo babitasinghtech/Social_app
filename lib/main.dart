@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Social App',
+      title: 'Social Media',
       theme: lightTheme,
       getPages: pagePath,
       darkTheme: darkTheme,
