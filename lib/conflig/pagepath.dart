@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:social_media/Pages/Auth/Authentication.dart';
+import 'package:social_media/Pages/Chat/chatPage.dart';
 import 'package:social_media/Pages/HomePage/HomePage.dart';
 
 var pagePath = [
@@ -11,6 +12,11 @@ var pagePath = [
   GetPage(
     name: "/homePage",
     page: () => HomePage(),
+    transition: Transition.rightToLeft,
+  ),
+  GetPage(
+    name: "/SingleChatPage",
+    page: () => SingleChatPage(),
     transition: Transition.rightToLeft,
   ),
 ];
