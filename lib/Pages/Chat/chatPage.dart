@@ -33,8 +33,15 @@ class SingleChatPage extends StatelessWidget {
         child: Column(
           children: [
             ChatBubble(
-              massage: "hhjhjhjhjhjjhjjhjjhjjhjjhjjhjjhjjhjjhjjj",
-              isComming: true,
+              message: "Hello Lori How are you?",
+              isComing: true,
+              imageUrl: "",
+              status: "seen",
+              time: "10:00 AM",
+            ),
+            ChatBubble(
+              message: "Hello Lori How are you?",
+              isComing: false,
               imageUrl: "",
               status: "seen",
               time: "10:00 AM",
