@@ -37,12 +37,11 @@ class SingleChatPage extends StatelessWidget {
         ),
         child: Row(
           children: [
-             Container(
+            Container(
               width: 30,
               height: 30,
-
-            SvgPicture.asset(AssetsImage.chatMicSVG, width: 25),
-             ),
+              child: SvgPicture.asset(AssetsImage.chatMicSVG, width: 25),
+            ),
             SizedBox(width: 10),
             Expanded(
               child: TextField(
@@ -54,18 +53,18 @@ class SingleChatPage extends StatelessWidget {
             ),
             SizedBox(width: 10),
 
-             Container(
+            Container(
               width: 30,
               height: 30,
 
-            SvgPicture.asset(AssetsImage.chatGallerySVG,width: 25),
-             ),
+              child: SvgPicture.asset(AssetsImage.chatGallerySVG, width: 25),
+            ),
             SizedBox(width: 10),
             Container(
               width: 30,
               height: 30,
 
-              child: SvgPicture.asset(AssetsImage.chatSendSVG,width: 25),
+              child: SvgPicture.asset(AssetsImage.chatSendSVG, width: 25),
             ),
           ],
         ),
