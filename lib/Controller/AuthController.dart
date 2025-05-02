@@ -30,7 +30,7 @@ class AuthController extends GetxController {
         email: email,
         password: password,
       );
-      print("Account Created ......");
+      print("Account Created ......🔥🔥🔥");
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         print('the password provided is too weak ');

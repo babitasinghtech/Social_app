@@ -36,7 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter_svg:                                  #for svg images
   slide_to_act:
-  firebase_auth: ^5.5.3                                # for Welcome screen           
+  firebase_auth:                                # for Welcome screen           
   get:                                          #for State management
   firebase_core: ^3.13.0
 dev_dependencies:
