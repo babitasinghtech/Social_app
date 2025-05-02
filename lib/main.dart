@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       getPages: pagePath,
       darkTheme: darkTheme,
       themeMode: ThemeMode.dark,
-      home: Authentication(),
+      home: Splashpage(),
     );
   }
 }
