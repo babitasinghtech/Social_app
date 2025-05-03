@@ -17,6 +17,7 @@ class Splashpage extends StatefulWidget {
 class _SplashpageState extends State<Splashpage> {
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     SplashController splashController = Get.put(SplashController());
     return Scaffold(
       body: Center(child: SvgPicture.asset(AssetsImage.appIconSVG)),
