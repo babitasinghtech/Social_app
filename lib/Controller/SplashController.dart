@@ -1,21 +1,29 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SplashController extends GetxController {
   final auth = FirebaseAuth.instance;
 
-  void onInit() async {
+  @override
+  void onInit() {
     super.onInit();
-    await splashHandle();
+    splashHandle(); // No await here, handle it properly
   }
 
   Future<void> splashHandle() async {
-    Future.delayed(Duration(seconds: 3));
-    if (auth.currentUser == null) {
-      Get.offAllNamed("/Authentication");
-    } else {
-      Get.offAllNamed("/homePage");
-    }
+    // Correct delay
+    await Future.delayed(Duration(milliseconds: 500));
+
+    // Use post-frame callback to safely navigate after build
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (auth.currentUser == null) {
+        Get.offAllNamed("/Authentication");
+      } else {
+        Get.offAllNamed("/homePage");
+      }
+    });
+
     print("hello");
   }
 }

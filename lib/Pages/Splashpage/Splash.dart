@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:social_media/Controller/SplashController.dart';
 import 'package:social_media/conflig/images.dart';
 
@@ -15,6 +14,13 @@ class Splashpage extends StatefulWidget {
 }
 
 class _SplashpageState extends State<Splashpage> {
+  @override
+  void initState() {
+    super.initState();
+    // Safe location for initializing controller
+    Get.put(SplashController());
+  }
+
   @override
   Widget build(BuildContext context) {
     // ignore: unused_local_variable
