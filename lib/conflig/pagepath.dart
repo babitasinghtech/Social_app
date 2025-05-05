@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:social_media/Pages/Auth/Authentication.dart';
 import 'package:social_media/Pages/Chat/chatPage.dart';
 import 'package:social_media/Pages/HomePage/HomePage.dart';
+import 'package:social_media/Pages/Profile/ProfilePages.dart';
 
 var pagePath = [
   GetPage(
@@ -17,6 +18,11 @@ var pagePath = [
   GetPage(
     name: "/SingleChatPage",
     page: () => SingleChatPage(),
+    transition: Transition.rightToLeft,
+  ),
+  GetPage(
+    name: "/ProfilePage",
+    page: () => ProfilePage(),
     transition: Transition.rightToLeft,
   ),
 ];

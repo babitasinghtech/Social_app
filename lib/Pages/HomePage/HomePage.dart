@@ -4,6 +4,7 @@ import 'package:social_media/Pages/HomePage/widget/ChatList.dart';
 import 'package:social_media/Pages/HomePage/widget/Tabbar.dart';
 import 'package:social_media/conflig/String.dart';
 import 'package:social_media/conflig/images.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -29,7 +30,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         ),
         actions: [
           IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.more_vert)),
+          IconButton(
+            onPressed: () {
+              Get.toNamed("/ProfilePage");
+            },
+            icon: Icon(Icons.more_vert),
+          ),
         ],
         bottom: MyTabBar(tabController, context),
       ),
