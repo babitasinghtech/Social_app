@@ -31,6 +31,13 @@ class UpdateProfilePage extends StatelessWidget {
                             borderRadius: BorderRadius.circular(100),
                           ),
                         ),
+                        Container(
+                          height: 1,
+                          width: 1,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                          ),
+                        ),
                       ],
                     ),
                   ),
