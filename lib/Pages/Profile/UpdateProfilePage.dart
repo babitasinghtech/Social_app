@@ -31,11 +31,44 @@ class UpdateProfilePage extends StatelessWidget {
                             borderRadius: BorderRadius.circular(100),
                           ),
                         ),
-                        Container(
-                          height: 1,
-                          width: 1,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Text(
+                              "Personal Info",
+                              style: Theme.of(context).textTheme.labelMedium,
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Text(
+                              "Name",
+                              style: Theme.of(context).textTheme.bodyLarge,
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 10),
+                        TextField(
+                          textInputAction: TextInputAction.next,
+                          decoration: InputDecoration(
+                            prefixIcon: Icon(Icons.person),
+                          ),
+                        ),
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Text(
+                              "Email Id",
+                              style: Theme.of(context).textTheme.bodyLarge,
+                            ),
+                          ],
+                        ),
+                        TextField(
+                          textInputAction: TextInputAction.next,
+                          decoration: InputDecoration(
+                            prefixIcon: Icon(Icons.person),
                           ),
                         ),
                       ],
