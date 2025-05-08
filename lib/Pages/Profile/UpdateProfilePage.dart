@@ -53,6 +53,7 @@ class UpdateProfilePage extends StatelessWidget {
                         TextField(
                           textInputAction: TextInputAction.next,
                           decoration: InputDecoration(
+                            hintText: "Nitesh Kumar",
                             prefixIcon: Icon(Icons.person),
                           ),
                         ),
@@ -65,12 +66,38 @@ class UpdateProfilePage extends StatelessWidget {
                             ),
                           ],
                         ),
+                          SizedBox(height: 10),
                         TextField(
                           textInputAction: TextInputAction.next,
                           decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.person),
+                            hintText: "babitasing@gmail.com",
+                            prefixIcon: Icon(Icons.alternate_email_rounded),
                           ),
                         ),
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Text(
+                              "Phone no.",
+                              style: Theme.of(context).textTheme.bodyLarge,
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 10),
+                        TextField(
+                          textInputAction: TextInputAction.next,
+                          decoration: InputDecoration(
+                            hintText: "34782392927",
+                            prefixIcon: Icon(Icons.phone),
+                          ),
+                        ),
+                          
+                          SizedBox(height: 20),
+                          primaryButton(
+                            btnName: "Save",
+                            icon: Icons.save,
+                            ontap: (){},
+                          ),
                       ],
                     ),
                   ),
