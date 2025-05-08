@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_media/Widget/primarybutton.dart';
 
 class UpdateProfilePage extends StatelessWidget {
   const UpdateProfilePage({super.key});
@@ -66,7 +67,7 @@ class UpdateProfilePage extends StatelessWidget {
                             ),
                           ],
                         ),
-                          SizedBox(height: 10),
+                        SizedBox(height: 10),
                         TextField(
                           textInputAction: TextInputAction.next,
                           decoration: InputDecoration(
@@ -91,13 +92,18 @@ class UpdateProfilePage extends StatelessWidget {
                             prefixIcon: Icon(Icons.phone),
                           ),
                         ),
-                          
-                          SizedBox(height: 20),
-                          primaryButton(
-                            btnName: "Save",
-                            icon: Icons.save,
-                            ontap: (){},
-                          ),
+
+                        SizedBox(height: 40),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            PrimaryButton(
+                              btnName: "Save",
+                              icon: Icons.save,
+                              ontap: () {},
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ),

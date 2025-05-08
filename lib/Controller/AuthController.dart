@@ -1,9 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthController extends GetxController {
   final auth = FirebaseAuth.instance;
+  final db = FirebaseFirestore.instance;
   RxBool isLoading = false.obs;
   //for login
   Future<void> login(String email, String password) async {
@@ -41,5 +42,10 @@ class AuthController extends GetxController {
       print(e);
     }
     isLoading.value = false;
+  }
+
+  Future<void> logoutUser() async {
+    await auth.signOut();
+    Get.offAllNamed("/Authentiocation");
   }
 }
