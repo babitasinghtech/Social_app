@@ -1,27 +1,35 @@
-
-import 'package:json_annotation/json_annotation.dart';
-part 'usermodel.g.dart';
-
-@JsonSerializable()
-class Usermodel {
-  @JsonKey(name: 'id')
+class UserModel {
   String? id;
-  @JsonKey(name: 'name')
   String? name;
-  @JsonKey(name: 'email')
   String? email;
-  @JsonKey(name: 'prpfileImage')
-  String? prpfileImage;
-  @JsonKey(name: 'phonenumber')
-  String? phonenumber;
+  String? profileImage;
+  String? phoneNo;
 
-  Usermodel({this.id, this.name, this.email, this.prpfileImage, this.phonenumber});
+  UserModel({
+    this.id,
+    this.name,
+    this.email,
+    this.profileImage,
+    this.phoneNo,
+  });
 
-  factory Usermodel.fromJson(Map<String, dynamic> json) => _$UsermodelFromJson(json);
-
-  static List<Usermodel> fromList(List<Map<String, dynamic>> list) {
-    return list.map(Usermodel.fromJson).toList();
+  factory UserModel.fromJson(Map<String, dynamic> json) {
+    return UserModel(
+      id: json['id'],
+      name: json['name'],
+      email: json['email'],
+      profileImage: json['profileImage'],
+      phoneNo: json['phoneNo'],
+    );
   }
 
-  Map<String, dynamic> toJson() => _$UsermodelToJson(this);
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'email': email,
+      'profileImage': profileImage,
+      'phoneNo': phoneNo,
+    };
+  }
 }

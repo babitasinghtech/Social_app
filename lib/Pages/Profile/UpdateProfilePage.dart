@@ -54,7 +54,7 @@ class UpdateProfilePage extends StatelessWidget {
                         TextField(
                           textInputAction: TextInputAction.next,
                           decoration: InputDecoration(
-                            hintText: "Nitesh Kumar",
+                            hintText: "Babita Singh",
                             prefixIcon: Icon(Icons.person),
                           ),
                         ),
@@ -116,3 +116,7 @@ class UpdateProfilePage extends StatelessWidget {
     );
   }
 }
+
+
+
+
