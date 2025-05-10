@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:social_media/Pages/Welcome/Widget/Welcomebody.dart';
-
 import 'package:social_media/Pages/Welcome/Widget/Welcomefooterbutton.dart';
 import 'package:social_media/Pages/Welcome/Widget/Welcomeheading.dart';
 

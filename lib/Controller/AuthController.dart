@@ -32,8 +32,9 @@ class AuthController extends GetxController {
         email: email,
         password: password,
       );
-      await initUser(email,name);
+      await initUser(email, name);
       print("Account Created ......🔥🔥🔥");
+      Get.offAllNamed("/homePage");
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         print('the password provided is too weak ');
@@ -50,17 +51,15 @@ class AuthController extends GetxController {
     await auth.signOut();
     Get.offAllNamed("/Authentiocation");
   }
-  Future<void> initUser(String email, String name)async{
-    var newUser = UserModel(
-      email: email,
-      name: name,
-    );
-    try{
-      await db.collection("users").doc(auth.currentUser!.uid).set(
-        newUser.toJson(),
-      );
 
-    }catch(ex){
+  Future<void> initUser(String email, String name) async {
+    var newUser = UserModel(email: email, name: name);
+    try {
+      await db
+          .collection("users")
+          .doc(auth.currentUser!.uid)
+          .set(newUser.toJson());
+    } catch (ex) {
       print(ex);
     }
   }

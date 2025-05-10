@@ -13,7 +13,7 @@ class SplashController extends GetxController {
 
   Future<void> splashHandle() async {
     // Correct delay
-    await Future.delayed(Duration(milliseconds: 500));
+    await Future.delayed(Duration(milliseconds: 300));
 
     // Use post-frame callback to safely navigate after build
     WidgetsBinding.instance.addPostFrameCallback((_) {
