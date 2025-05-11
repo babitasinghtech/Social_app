@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:social_media/Controller/AuthController.dart';
+import 'package:social_media/Controller/ProfileController.dart';
 import 'package:social_media/Pages/Profile/Widgets/profileuserinfo.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -11,6 +12,8 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AuthController authController = Get.put(AuthController());
+    ProfileController profileController = Get.put(ProfileController());
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Profile"),

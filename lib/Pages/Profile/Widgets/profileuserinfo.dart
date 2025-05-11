@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/get_instance.dart';
+import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
+import 'package:social_media/Controller/ProfileController.dart';
 import 'package:social_media/conflig/images.dart';
 
 class ProfileUserInfo extends StatelessWidget {
@@ -7,6 +11,7 @@ class ProfileUserInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ProfileController profileController = Get.put(ProfileController());
     return Container(
       padding: EdgeInsets.all(20),
       //height: 100,
@@ -27,18 +32,21 @@ class ProfileUserInfo extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      "Babita Singh",
-                      style: Theme.of(context).textTheme.bodyLarge,
+                    Obx(
+                      () => Text(
+                        profileController.currentUser.value.name! == null
+                            ? "User"
+                            : profileController.currentUser.value.name!,
+                        style: Theme.of(context).textTheme.bodyLarge,
+                      ),
                     ),
                   ],
                 ),
-
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "babitasingh@gmail.com",
+                      profileController.currentUser.value.email!,
                       style: Theme.of(context).textTheme.labelLarge,
                     ),
                   ],
