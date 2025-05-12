@@ -2,8 +2,8 @@ import 'package:get/get.dart';
 import 'package:social_media/Pages/Auth/Authentication.dart';
 import 'package:social_media/Pages/Chat/chatPage.dart';
 import 'package:social_media/Pages/HomePage/HomePage.dart';
-import 'package:social_media/Pages/Profile/ProfilePages.dart';
-import 'package:social_media/Pages/Profile/UpdateProfilePage.dart';
+import 'package:social_media/Pages/UserProfile/ProfilePages.dart';
+import 'package:social_media/Pages/UserProfile/UpdateProfilePage.dart';
 
 var pagePath = [
   GetPage(
@@ -21,14 +21,14 @@ var pagePath = [
     page: () => SingleChatPage(),
     transition: Transition.rightToLeft,
   ),
-  GetPage(
-    name: "/ProfilePage",
-    page: () => ProfilePage(),
-    transition: Transition.rightToLeft,
-  ),
-  GetPage(
-    name: "/updateProfilePage",
-    page: () => UpdateProfilePage(),
-    transition: Transition.rightToLeft,
-  ),
+  // GetPage(
+  //   name: "/userProfilePage",
+  //   page: () => UserProfilePage(),
+  //   transition: Transition.rightToLeft,
+  // ),
+  // GetPage(
+  //   name: "/userupdateProfilePage",
+  //   page: () => UserUpdateProfilePage(),
+  //   transition: Transition.rightToLeft,
+  // ),
 ];

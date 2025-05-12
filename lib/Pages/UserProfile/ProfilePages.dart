@@ -4,10 +4,10 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:social_media/Controller/AuthController.dart';
 import 'package:social_media/Controller/ProfileController.dart';
-import 'package:social_media/Pages/Profile/Widgets/profileuserinfo.dart';
+import 'package:social_media/Pages/UserProfile/Widgets/profileuserinfo.dart';
 
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+class UserProfilePage extends StatelessWidget {
+  const UserProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {

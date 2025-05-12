@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:social_media/Controller/ProfileController.dart';
 import 'package:social_media/Pages/HomePage/widget/ChatList.dart';
 import 'package:social_media/Pages/HomePage/widget/Tabbar.dart';
+import 'package:social_media/Pages/ProfilePage/profilePage.dart';
 import 'package:social_media/conflig/String.dart';
 import 'package:social_media/conflig/images.dart';
 import 'package:get/get.dart';
@@ -34,7 +35,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           IconButton(onPressed: () {}, icon: Icon(Icons.search)),
           IconButton(
             onPressed: () {
-              Get.toNamed("/ProfilePage");
+              // Get.toNamed("/ProfilePage");
+              Get.to(ProfilePage());
             },
             icon: Icon(Icons.more_vert),
           ),

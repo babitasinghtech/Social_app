@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:social_media/Widget/primarybutton.dart';
 
-class UpdateProfilePage extends StatelessWidget {
-  const UpdateProfilePage({super.key});
+class UserUpdateProfilePage extends StatelessWidget {
+  const UserUpdateProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -116,7 +116,3 @@ class UpdateProfilePage extends StatelessWidget {
     );
   }
 }
-
-
-
-
