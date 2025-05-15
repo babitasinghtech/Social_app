@@ -1,10 +1,16 @@
-import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:image_picker/image_picker.dart';
 
-class ImagePicker extends StatelessWidget {
-  const ImagePicker({super.key});
+class ImagePickerController extends GetxController {
+  final ImagePicker picker = ImagePicker();
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(body: Column());
+  Future<String> pickImage() async {
+    final XFile? image = await picker.pickImage(source: ImageSource.gallery);
+    if (image != null) {
+      print(image.path);
+      return image.path;
+    } else {
+      return "";
+    }
   }
 }
