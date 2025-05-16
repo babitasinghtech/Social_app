@@ -59,6 +59,7 @@ class ProfilePage extends StatelessWidget {
                                           imagePath.value =
                                               await imagepickerController
                                                   .pickImage();
+
                                           print(
                                             "Image Picked" + imagePath.value,
                                           );
