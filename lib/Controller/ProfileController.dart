@@ -31,19 +31,31 @@ class ProfileController extends GetxController {
   }
 
   Future<void> UpdateProfile(
-    String? imageUrl,
-    String? name,
-    String? about,
-    String? number,
+    String imageUrl,
+    String name,
+    String about,
+    String number,
   ) async {
     isLoading.value = true;
+    final imageLink = await uplaodFileToFirebase(imageUrl);
+    print(imageLink);
+  }
 
-    final path = "files/${imageUrl}";
-    final file = File(imageUrl!);
-    try {
-      final ref = store.ref().child(path).putFile(file);
-    } catch (ex) {
-      print(ex);
+  Future<String> uplaodFileToFirebase(String imagePath) async {
+    final path = "files/${imagePath}";
+    final file = File(imagePath!);
+    if (imagePath != "") {
+      try {
+        final ref = store.ref().child(path).putFile(file);
+        final uploadTask = await ref.whenComplete(() {});
+        final downloadImageUrl = await uploadTask.ref.getDownloadURL();
+        print(downloadImageUrl);
+        return downloadImageUrl;
+      } catch (ex) {
+        print(ex);
+        return "";
+      }
     }
+    return "";
   }
 }
