@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:social_media/conflig/String.dart';
-import 'package:social_media/conflig/images.dart';
+import 'package:social_media/config/String.dart';
+import 'package:social_media/config/images.dart';
 
 class Welcomebody extends StatelessWidget {
   const Welcomebody({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:social_media/Pages/Chat/Widgets/chatbubble.dart';
-import 'package:social_media/conflig/images.dart';
+import 'package:social_media/config/images.dart';
 
 class SingleChatPage extends StatelessWidget {
   const SingleChatPage({super.key});

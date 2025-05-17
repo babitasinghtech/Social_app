@@ -28,19 +28,22 @@ class ProfileController extends GetxController {
         .then(
           (value) => {currentUser.value = UserModel.fromJson(value.data()!)},
         );
-    Future<void> UpdateProfile(
-      String imageUrl,
-      String name,
-      String about,
-      String number,
-    ) async {
-      isLoading.value = true;
+  }
 
-      final path = "files/${imageUrl}";
-      final file = File(imageUrl);
-      final ref = store.ref().child(path);
-      ref.putFile(file).then((p0) => {print(p0)});
-      print(ref);
+  Future<void> UpdateProfile(
+    String? imageUrl,
+    String? name,
+    String? about,
+    String? number,
+  ) async {
+    isLoading.value = true;
+
+    final path = "files/${imageUrl}";
+    final file = File(imageUrl!);
+    try {
+      final ref = store.ref().child(path).putFile(file);
+    } catch (ex) {
+      print(ex);
     }
   }
 }

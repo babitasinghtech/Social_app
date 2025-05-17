@@ -6,8 +6,8 @@ import 'package:social_media/Controller/ProfileController.dart';
 import 'package:social_media/Pages/HomePage/widget/ChatList.dart';
 import 'package:social_media/Pages/HomePage/widget/Tabbar.dart';
 import 'package:social_media/Pages/ProfilePage/profilePage.dart';
-import 'package:social_media/conflig/String.dart';
-import 'package:social_media/conflig/images.dart';
+import 'package:social_media/config/String.dart';
+import 'package:social_media/config/images.dart';
 import 'package:get/get.dart';
 
 class HomePage extends StatefulWidget {

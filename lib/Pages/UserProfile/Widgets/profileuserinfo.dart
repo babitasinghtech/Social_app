@@ -4,7 +4,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:social_media/Controller/ProfileController.dart';
-import 'package:social_media/conflig/images.dart';
+import 'package:social_media/config/images.dart';
 
 class ProfileUserInfo extends StatelessWidget {
   const ProfileUserInfo({super.key});

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:social_media/Pages/HomePage/widget/ChatTile.dart';
-import 'package:social_media/conflig/images.dart';
+import 'package:social_media/config/images.dart';
 
 class ChatPage extends StatelessWidget {
   const ChatPage({super.key});

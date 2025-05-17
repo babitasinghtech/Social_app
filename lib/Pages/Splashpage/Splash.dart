@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:social_media/Controller/SplashController.dart';
-import 'package:social_media/conflig/images.dart';
+import 'package:social_media/config/images.dart';
 
 class Splashpage extends StatefulWidget {
   const Splashpage({super.key});

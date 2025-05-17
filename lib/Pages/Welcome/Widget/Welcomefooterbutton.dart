@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:slide_to_act/slide_to_act.dart';
-import 'package:social_media/conflig/String.dart';
-import 'package:social_media/conflig/images.dart';
+import 'package:social_media/config/String.dart';
+import 'package:social_media/config/images.dart';
 
 class WelcomeFooterButton extends StatelessWidget {
   const WelcomeFooterButton({super.key});
