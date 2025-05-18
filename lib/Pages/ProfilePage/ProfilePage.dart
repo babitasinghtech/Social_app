@@ -59,12 +59,7 @@ class ProfilePage extends StatelessWidget {
                                           imagePath.value =
                                               await imagepickerController
                                                   .pickImage();
-                                          await profileController.UpdateProfile(
-                                            imagePath.value,
-                                            name.text,
-                                            about.text,
-                                            phone.text,
-                                          );
+
                                           print(
                                             "Image Picked" + imagePath.value,
                                           );
@@ -109,15 +104,27 @@ class ProfilePage extends StatelessWidget {
                                           ),
                                         ),
                                         child:
-                                            imagePath.value == ""
+                                            (profileController
+                                                            .currentUser
+                                                            .value
+                                                            .profileImage ==
+                                                        null ||
+                                                    profileController
+                                                            .currentUser
+                                                            .value
+                                                            .profileImage ==
+                                                        "")
                                                 ? Icon(Icons.image)
                                                 : ClipRRect(
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                         100,
                                                       ),
-                                                  child: Image.file(
-                                                    File(imagePath.value),
+                                                  child: Image.network(
+                                                    profileController
+                                                        .currentUser
+                                                        .value
+                                                        .profileImage!,
                                                     fit: BoxFit.cover,
                                                   ),
                                                 ),
@@ -181,7 +188,13 @@ class ProfilePage extends StatelessWidget {
                                       ? PrimaryButton(
                                         btnName: "Save",
                                         icon: Icons.save,
-                                        ontap: () {
+                                        ontap: () async {
+                                          await profileController.UpdateProfile(
+                                            imagePath.value,
+                                            name.text,
+                                            about.text,
+                                            phone.text,
+                                          );
                                           isEdit.value = false;
                                         },
                                       )
