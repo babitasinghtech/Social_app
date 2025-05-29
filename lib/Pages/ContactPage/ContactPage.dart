@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:social_media/Controller/ContactController.dart';
 import 'package:social_media/Pages/ContactPage/Widgets/NewContactTile.dart';
 import 'package:social_media/Pages/ContactPage/Widgets/contactsearch.dart';
 import 'package:social_media/Pages/HomePage/widget/ChatTile.dart';
@@ -13,6 +14,7 @@ class ContactPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     RxBool isSearchEnable = false.obs;
+    ContactController contactController = Get.put(ContactController());
     return Scaffold(
       appBar: AppBar(
         title: Text("Select Contact"),
@@ -49,61 +51,23 @@ class ContactPage extends StatelessWidget {
             Row(children: [Text("Contacts with Peoples")]),
             SizedBox(height: 10),
             Column(
-              children: [
-                InkWell(
-                  onTap: () {
-                    Get.toNamed("/SingleChatPage");
-                  },
-                  child: ChatTile(
-                    imageUrl: AssetsImage.girlpic,
-                    name: "Lori",
-                    lastChat: "have a Good Day",
-                    lastTime: "09:30 PM",
-                  ),
-                ),
-                ChatTile(
-                  imageUrl: AssetsImage.girlpic,
-                  name: "mary",
-                  lastChat: "have a Good Day",
-                  lastTime: "09:30 PM",
-                ),
-                ChatTile(
-                  imageUrl: AssetsImage.girlpic,
-                  name: "mirinada",
-                  lastChat: "have a Good Day",
-                  lastTime: "09:30 PM",
-                ),
-                ChatTile(
-                  imageUrl: AssetsImage.girlpic,
-                  name: "charlie",
-                  lastChat: "Hmmbe",
-                  lastTime: "09:30 PM",
-                ),
-                ChatTile(
-                  imageUrl: AssetsImage.boypic,
-                  name: "james",
-                  lastChat: "thik hai bhai",
-                  lastTime: "09:30 PM",
-                ),
-                ChatTile(
-                  imageUrl: AssetsImage.girlpic,
-                  name: "Lori",
-                  lastChat: "have a Good Day",
-                  lastTime: "09:30 PM",
-                ),
-                ChatTile(
-                  imageUrl: AssetsImage.girlpic,
-                  name: "Lori",
-                  lastChat: "have a Good Day",
-                  lastTime: "09:30 PM",
-                ),
-                ChatTile(
-                  imageUrl: AssetsImage.girlpic,
-                  name: "Lori",
-                  lastChat: "have a Good Day",
-                  lastTime: "09:30 PM",
-                ),
-              ],
+              children:
+                  contactController.userList
+                      .map(
+                        (e) => InkWell(
+                          onTap: () {
+                            // Get.toNamed("/SingleChatPage");
+                          },
+                          child: ChatTile(
+                            imageUrl:
+                                e.profileImage ?? AssetsImage.defaultProfileUrl,
+                            name: e.name ?? "User",
+                            lastChat: e.about ?? "have a Good Day",
+                            lastTime: "",
+                          ),
+                        ),
+                      )
+                      .toList(),
             ),
           ],
         ),

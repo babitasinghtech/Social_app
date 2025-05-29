@@ -4,7 +4,7 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/state_manager.dart';
 import 'package:social_media/model/Usermodel.dart';
 
-class Dbcontroller extends GetxController {
+class ContactController extends GetxController {
   final db = FirebaseFirestore.instance;
   final auth = FirebaseAuth.instance;
   RxBool isLoading = false.obs;
@@ -18,6 +18,7 @@ class Dbcontroller extends GetxController {
   Future<void> getUserList() async {
     isLoading.value = true;
     try {
+      userList.clear();
       await db
           .collection("users")
           .get()
