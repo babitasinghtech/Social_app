@@ -6,10 +6,11 @@ import 'package:get/get.dart';
 import 'package:social_media/Controller/ImagePicker.dart';
 import 'package:social_media/Controller/ProfileController.dart';
 import 'package:social_media/Widget/primarybutton.dart';
+import 'package:social_media/main.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
-
+ 
   @override
   Widget build(BuildContext context) {
     RxBool isEdit = false.obs;
@@ -44,6 +45,7 @@ class ProfilePage extends StatelessWidget {
           ),
         ],
       ),
+
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: ListView(
@@ -77,6 +79,7 @@ class ProfilePage extends StatelessWidget {
                                             "Image Picked" + imagePath.value,
                                           );
                                         },
+
                                         child: Container(
                                           height: 200,
                                           width: 200,
@@ -145,6 +148,7 @@ class ProfilePage extends StatelessWidget {
                             ),
                           ],
                         ),
+
                         SizedBox(height: 10),
                         Obx(
                           () => TextField(
