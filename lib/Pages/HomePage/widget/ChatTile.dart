@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 
 class ChatTile extends StatelessWidget {
@@ -5,6 +6,7 @@ class ChatTile extends StatelessWidget {
   final String name;
   final String lastChat;
   final String lastTime;
+
   const ChatTile({
     super.key,
     required this.imageUrl,
@@ -32,7 +34,18 @@ class ChatTile extends StatelessWidget {
                 width: 70,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(100),
-                  child: Image.network(imageUrl, width: 70, fit: BoxFit.cover),
+                  child:
+                      imageUrl.startsWith('data:image')
+                          ? Image.memory(
+                            base64Decode(imageUrl.split(',').last),
+                            width: 70,
+                            fit: BoxFit.cover,
+                          )
+                          : Image.network(
+                            imageUrl,
+                            width: 70,
+                            fit: BoxFit.cover,
+                          ),
                 ),
               ),
               SizedBox(width: 15),
