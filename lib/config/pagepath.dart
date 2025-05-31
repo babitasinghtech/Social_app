@@ -3,6 +3,7 @@ import 'package:social_media/Pages/Auth/Authentication.dart';
 import 'package:social_media/Pages/Chat/chatPage.dart';
 import 'package:social_media/Pages/ContactPage/ContactPage.dart';
 import 'package:social_media/Pages/HomePage/HomePage.dart';
+import 'package:social_media/Pages/ProfilePage/ProfilePage.dart';
 import 'package:social_media/Pages/UserProfile/ProfilePages.dart';
 import 'package:social_media/Pages/UserProfile/UpdateProfilePage.dart';
 
@@ -17,9 +18,10 @@ var pagePath = [
     page: () => HomePage(),
     transition: Transition.rightToLeft,
   ),
+  //
   GetPage(
-    name: "/SingleChatPage",
-    page: () => SingleChatPage(),
+    name: "/profilePage",
+    page: () => ProfilePage(),
     transition: Transition.rightToLeft,
   ),
   GetPage(

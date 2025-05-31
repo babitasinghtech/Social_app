@@ -1,4 +1,4 @@
-class ChatMessageModel {
+class ChatModel {
   final String id;
   final String message;
   final String senderName;
@@ -13,7 +13,7 @@ class ChatMessageModel {
   final List<String> reactions;
   final List<dynamic> replies;
 
-  ChatMessageModel({
+  ChatModel({
     required this.id,
     required this.message,
     required this.senderName,
@@ -29,8 +29,8 @@ class ChatMessageModel {
     required this.replies,
   });
 
-  factory ChatMessageModel.fromJson(Map<String, dynamic> json) {
-    return ChatMessageModel(
+  factory ChatModel.fromJson(Map<String, dynamic> json) {
+    return ChatModel(
       id: json['id'] ?? '',
       message: json['message'] ?? '',
       senderName: json['senderName'] ?? '',

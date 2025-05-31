@@ -3,18 +3,26 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:social_media/Controller/ContactController.dart';
+import 'package:social_media/Controller/chatController.dart';
+import 'package:social_media/Pages/Chat/chatPage.dart';
 import 'package:social_media/Pages/ContactPage/Widgets/NewContactTile.dart';
 import 'package:social_media/Pages/ContactPage/Widgets/contactsearch.dart';
+// import 'package:social_media/Pages/HomePage/widget/ChatList.dart';
 import 'package:social_media/Pages/HomePage/widget/ChatTile.dart';
-import 'package:social_media/conflig/images.dart';
+import 'package:social_media/config/images.dart';
+// import 'package:social_media/model/Usermodel.dart';
 
 class ContactPage extends StatelessWidget {
+  //chat page
+
   const ContactPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     RxBool isSearchEnable = false.obs;
     ContactController contactController = Get.put(ContactController());
+
+    ChatController chatController = Get.put(ChatController());
     return Scaffold(
       appBar: AppBar(
         title: Text("Select Contact"),
@@ -56,7 +64,8 @@ class ContactPage extends StatelessWidget {
                       .map(
                         (e) => InkWell(
                           onTap: () {
-                            // Get.toNamed("/SingleChatPage");
+                            Get.to(SingleChatPage(userModel: e));
+                            // Get.toNamed("/SingleChatPage", arguments: e);
                           },
                           child: ChatTile(
                             imageUrl:

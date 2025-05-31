@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:social_media/Controller/ImagePicker.dart';
 import 'package:social_media/Controller/ProfileController.dart';
-import 'package:social_media/Pages/HomePage/widget/ChatList.dart';
+import 'package:social_media/Pages/Chat/chatPage.dart';
 import 'package:social_media/Pages/HomePage/widget/Tabbar.dart';
 import 'package:social_media/Pages/ProfilePage/profilePage.dart';
 import 'package:social_media/config/String.dart';
@@ -70,7 +69,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         child: TabBarView(
           controller: tabController,
           children: [
-            ChatPage(),
+            SingleChatPage(),
             ListView(children: [ListTile(title: Text("Hema"))]),
             ListView(children: [ListTile(title: Text("Hema"))]),
           ],
