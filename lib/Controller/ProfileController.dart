@@ -32,6 +32,7 @@ class ProfileController extends GetxController {
         );
   }
 
+  // ignore: non_constant_identifier_names
   Future<void> UpdateProfile(
     String imageUrl,
     String name,
@@ -60,14 +61,16 @@ class ProfileController extends GetxController {
 
       await getUserDetails();
     } catch (ex) {
+      // ignore: avoid_print
       print(ex);
     }
     isLoading.value = false;
   }
 
   Future<String> uplaodFileToFirebase(String imagePath) async {
+    // ignore: unnecessary_brace_in_string_interps
     final path = "files/${imagePath}";
-    final file = File(imagePath!);
+    final file = File(imagePath);
     if (imagePath != "") {
       try {
         final ref = store.ref().child(path).putFile(file);
