@@ -30,6 +30,11 @@ var pagePath = [
     transition: Transition.rightToLeft,
   ),
   // GetPage(
+  //   name: "/singlechatpage",
+  //   page: () => SingleChatPage(),
+  //   transition: Transition.rightToLeft,
+  // ),
+  // GetPage(
   //   name: "/userProfilePage",
   //   page: () => UserProfilePage(),
   //   transition: Transition.rightToLeft,

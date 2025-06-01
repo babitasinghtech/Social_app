@@ -7,10 +7,8 @@ import 'package:social_media/Controller/chatController.dart';
 import 'package:social_media/Pages/Chat/chatPage.dart';
 import 'package:social_media/Pages/ContactPage/Widgets/NewContactTile.dart';
 import 'package:social_media/Pages/ContactPage/Widgets/contactsearch.dart';
-// import 'package:social_media/Pages/HomePage/widget/ChatList.dart';
 import 'package:social_media/Pages/HomePage/widget/ChatTile.dart';
 import 'package:social_media/config/images.dart';
-// import 'package:social_media/model/Usermodel.dart';
 
 class ContactPage extends StatelessWidget {
   //chat page
@@ -64,7 +62,7 @@ class ContactPage extends StatelessWidget {
                       .map(
                         (e) => InkWell(
                           onTap: () {
-                            Get.to(SingleChatPage(userModel: e));
+                            Get.to(ChatPage(userModel: e));
                             // Get.toNamed("/SingleChatPage", arguments: e);
                           },
                           child: ChatTile(

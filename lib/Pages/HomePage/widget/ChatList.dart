@@ -4,8 +4,8 @@ import 'package:get/get_navigation/get_navigation.dart';
 import 'package:social_media/Pages/HomePage/widget/ChatTile.dart';
 import 'package:social_media/config/images.dart';
 
-class ChatPage extends StatelessWidget {
-  const ChatPage({super.key});
+class ChatInSidePage extends StatelessWidget {
+  const ChatInSidePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,14 +16,14 @@ class ChatPage extends StatelessWidget {
             Get.toNamed("/SingleChatPage");
           },
           child: ChatTile(
-            imageUrl: AssetsImage.defaultProfileUrl,
+            imageUrl: AssetsImage.boypic,
             name: "Lori",
             lastChat: "have a Good Day",
             lastTime: "09:30 PM",
           ),
         ),
         ChatTile(
-          imageUrl: AssetsImage.defaultProfileUrl,
+          imageUrl: AssetsImage.boypic,
           name: "mary",
           lastChat: "have a Good Day",
           lastTime: "09:30 PM",
@@ -35,7 +35,7 @@ class ChatPage extends StatelessWidget {
           lastTime: "09:30 PM",
         ),
         ChatTile(
-          imageUrl: AssetsImage.defaultProfileUrl,
+          imageUrl: AssetsImage.girlpic,
           name: "charlie",
           lastChat: "Hmmbe",
           lastTime: "09:30 PM",
@@ -47,19 +47,19 @@ class ChatPage extends StatelessWidget {
           lastTime: "09:30 PM",
         ),
         ChatTile(
-          imageUrl: AssetsImage.defaultProfileUrl,
+          imageUrl: AssetsImage.boypic,
           name: "Lori",
           lastChat: "have a Good Day",
           lastTime: "09:30 PM",
         ),
         ChatTile(
-          imageUrl: AssetsImage.defaultProfileUrl,
+          imageUrl: AssetsImage.girlpic,
           name: "Lori",
           lastChat: "have a Good Day",
           lastTime: "09:30 PM",
         ),
         ChatTile(
-          imageUrl: AssetsImage.defaultProfileUrl,
+          imageUrl: AssetsImage.girlpic,
           name: "Lori",
           lastChat: "have a Good Day",
           lastTime: "09:30 PM",

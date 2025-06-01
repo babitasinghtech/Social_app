@@ -7,10 +7,11 @@ import 'package:social_media/Pages/Chat/Widgets/chatbubble.dart';
 import 'package:social_media/config/images.dart';
 import 'package:social_media/model/Usermodel.dart';
 
-class SingleChatPage extends StatelessWidget {
+class ChatPage extends StatelessWidget {
   //ChatPage
+  //  final String userId;
   final UserModel userModel;
-  const SingleChatPage({super.key, required this.userModel});
+  const ChatPage({super.key, required this.userModel});
 
   @override
   Widget build(BuildContext context) {
@@ -75,16 +76,8 @@ class SingleChatPage extends StatelessWidget {
             InkWell(
               onTap: () {
                 if (messageController.text.isNotEmpty) {
-                  var ChatModel = ChatModel(
-                    id: DateTime.now().millisecondsSinceEpoch.toString(),
-                    message: messageController.text,
-                    senderId: chatController.auth.currentUser!.uid,
-                    receiveId: userModel.id,
-                    time: DateTime.now().microsecondsSinceEpoch.toString(),
-                  );
-
                   chatController.sendMessage(
-                    userModel.id,
+                    userModel.id!,
                     messageController.text,
                   );
                   messageController.clear();

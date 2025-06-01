@@ -1,16 +1,14 @@
 import 'dart:io';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:social_media/Controller/ImagePicker.dart';
 import 'package:social_media/Controller/ProfileController.dart';
 import 'package:social_media/Widget/primarybutton.dart';
-import 'package:social_media/main.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
- 
+
   @override
   Widget build(BuildContext context) {
     RxBool isEdit = false.obs;

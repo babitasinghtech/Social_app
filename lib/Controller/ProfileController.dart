@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -15,6 +14,9 @@ class ProfileController extends GetxController {
 
   Rx<UserModel> currentUser = UserModel().obs;
 
+  UserModel get userModel => currentUser.value; // ✅ This line fixes your error
+
+  @override
   void onInit() async {
     super.onInit();
     await getUserDetails();

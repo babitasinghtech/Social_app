@@ -69,7 +69,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         child: TabBarView(
           controller: tabController,
           children: [
-            SingleChatPage(),
+            ChatPage(userModel: ),
             ListView(children: [ListTile(title: Text("Hema"))]),
             ListView(children: [ListTile(title: Text("Hema"))]),
           ],
