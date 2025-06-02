@@ -11,15 +11,13 @@ class ChatController extends GetxController {
   RxBool isLoading = false.obs;
   var uuid = Uuid();
   ProfileController controller = Get.put(ProfileController());
+
   // Generate consistent room ID between two users
   String getRoomId(String targetUserId) {
     String currentUserId = auth.currentUser!.uid;
-
-    if (currentUserId.codeUnitAt(0) > targetUserId.codeUnitAt(0)) {
-      return currentUserId + targetUserId;
-    } else {
-      return targetUserId + currentUserId;
-    }
+    return currentUserId.codeUnitAt(0) > targetUserId.codeUnitAt(0)
+        ? currentUserId + targetUserId
+        : targetUserId + currentUserId;
   }
 
   Future<void> sendMessage(String targetUserId, String message) async {
@@ -42,16 +40,36 @@ class ChatController extends GetxController {
       reactions: [],
       replies: [],
     );
+
     try {
       await db
           .collection("chats")
           .doc(roomId)
-          .collection("message")
+          .collection("messages") // ✅ consistent collection name
           .doc(chatId)
           .set(newChat.toJson());
     } catch (e) {
-      print("Error sending message:$e");
+      print("Error sending message: $e");
     }
     isLoading.value = false;
+  }
+
+  Stream<List<ChatModel>> getMessages(String targetUserId) {
+    String roomId = getRoomId(targetUserId);
+    return db
+        .collection("chats")
+        .doc(roomId)
+        .collection("messages") // ✅ consistent
+        .orderBy("timestamp", descending: true)
+        .snapshots()
+        .map(
+          (snapshot) =>
+              snapshot.docs
+                  .map(
+                    (doc) =>
+                        ChatModel.fromJson(doc.data() as Map<String, dynamic>),
+                  )
+                  .toList(),
+        );
   }
 }

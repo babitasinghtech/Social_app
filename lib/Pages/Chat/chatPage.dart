@@ -96,62 +96,34 @@ class ChatPage extends StatelessWidget {
 
       body: Padding(
         padding: const EdgeInsets.all(10),
-        child: ListView(
-          children: [
-            ChatBubble(
-              message: "Hello Lori How are you?",
-              isComing: true,
-              imageUrl: "",
-              status: "seen",
-              time: "10:00 AM",
-            ),
-            ChatBubble(
-              message: "I'm perfactly fine",
-              isComing: false,
-              imageUrl: "",
-              status: "seen",
-              time: "10:01 AM",
-            ),
-            ChatBubble(
-              message: "Do you have some knowledge about GoogleCloud",
-              isComing: false,
-              imageUrl:
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyDN-MudJPSedBOTxMj6q9ni7G1-o49uk8Xg&s",
-              status: "seen",
-              time: "10:01 AM",
-            ),
-            ChatBubble(
-              message: "No don't have any knowledge about it",
-              isComing: true,
-              imageUrl: "",
-              status: "seen",
-              time: "10:01 AM",
-            ),
-            ChatBubble(
-              message: "but I have some knowledge about AWS",
-              isComing: true,
-              status: "seen",
-              time: "10:01 AM",
-              imageUrl: "",
-            ),
-            ChatBubble(
-              message:
-                  "Ohk its perfect now you can easily learn about this topic",
-              isComing: false,
-              imageUrl: "",
-              status: "seen",
-              time: "10:01 AM",
-            ),
-            ChatBubble(
-              message:
-                  "Yes you are right, i serach on google about it, you can check it out",
-              isComing: true,
-              imageUrl:
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4IQwf20WhpY5FanP5-POvAjcAoBUIP72YnQ&s",
-              status: "seen",
-              time: "10:01 AM",
-            ),
-          ],
+        child: StreamBuilder(
+          stream: chatController.getMessages(userModel.id!),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return Center(child: CircularProgressIndicator());
+            }
+            if (snapshot.hasError) {
+              return Center(child: Text("Error: ${snapshot.error}"));
+            }
+            if (snapshot.data == null) {
+              return Center(child: Text("No Messages"));
+            } else {
+              return ListView.builder(
+                // ⬅️ Add `return` here
+                reverse: true,
+                itemCount: snapshot.data!.length,
+                itemBuilder: (context, index) {
+                  return ChatBubble(
+                    message: snapshot.data![index].message!,
+                    imageUrl: snapshot.data![index].imageUrl ?? "",
+                    isComing: true,
+                    status: "read",
+                    time: "9 AM", // Ideally use actual time from message
+                  );
+                },
+              );
+            }
+          },
         ),
       ),
     );
