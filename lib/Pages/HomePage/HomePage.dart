@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:social_media/Controller/ImagePicker.dart';
 import 'package:social_media/Controller/ProfileController.dart';
-import 'package:social_media/Pages/Chat/chatPage.dart';
+import 'package:social_media/Pages/HomePage/widget/ChatList.dart';
 import 'package:social_media/Pages/HomePage/widget/Tabbar.dart';
+
 import 'package:social_media/Pages/ProfilePage/profilePage.dart';
 import 'package:social_media/config/String.dart';
 import 'package:social_media/config/images.dart';
@@ -60,7 +61,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         backgroundColor: Theme.of(context).colorScheme.primary,
         child: Icon(
           Icons.add,
-          // ignore: deprecated_member_use
           color: Theme.of(context).colorScheme.onBackground,
         ),
       ),
@@ -69,10 +69,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         child: TabBarView(
           controller: tabController,
           children: [
-            // ChatPage(userModel: someUserModel),
-            Center(child: Text("Select a user to start chatting")),
-            ListView(children: [ListTile(title: Text("Hema"))]),
-            ListView(children: [ListTile(title: Text("Hema"))]),
+            ChatInSidePage(),
+
+            ListView(children: [ListTile(title: Text("Group Tab "))]),
+            ListView(children: [ListTile(title: Text("Calls Tab"))]),
           ],
         ),
       ),

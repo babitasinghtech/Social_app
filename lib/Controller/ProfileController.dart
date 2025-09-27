@@ -14,7 +14,7 @@ class ProfileController extends GetxController {
 
   Rx<UserModel> currentUser = UserModel().obs;
 
-  UserModel get userModel => currentUser.value; // ✅ This line fixes your error
+  UserModel get userModel => currentUser.value; // This line fixes your error
 
   @override
   void onInit() async {

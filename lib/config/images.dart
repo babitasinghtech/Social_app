@@ -24,4 +24,6 @@ class AssetsImage {
   // PNG Images
   static const boypic = "${imagesPath}Group 43.png";
   static const girlpic = "${imagesPath}Group 44.png";
+  static const pic = "${imagesPath}images.jpeg";
+  static const photo = "${imagesPath}images (1).jpeg";
 }

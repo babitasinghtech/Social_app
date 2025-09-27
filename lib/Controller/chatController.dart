@@ -45,7 +45,7 @@ class ChatController extends GetxController {
       await db
           .collection("chats")
           .doc(roomId)
-          .collection("messages") // ✅ consistent collection name
+          .collection("messages") // consistent collection name
           .doc(chatId)
           .set(newChat.toJson());
     } catch (e) {
@@ -59,7 +59,7 @@ class ChatController extends GetxController {
     return db
         .collection("chats")
         .doc(roomId)
-        .collection("messages") // ✅ consistent
+        .collection("messages") // consistent
         .orderBy("timestamp", descending: true)
         .snapshots()
         .map(

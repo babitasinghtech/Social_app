@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/get_navigation.dart';
 import 'package:social_media/Controller/ContactController.dart';
 import 'package:social_media/Controller/chatController.dart';
 import 'package:social_media/Pages/Chat/chatPage.dart';
@@ -11,19 +9,21 @@ import 'package:social_media/Pages/HomePage/widget/ChatTile.dart';
 import 'package:social_media/config/images.dart';
 
 class ContactPage extends StatelessWidget {
-  //chat page
-
   const ContactPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     RxBool isSearchEnable = false.obs;
     ContactController contactController = Get.put(ContactController());
-
     ChatController chatController = Get.put(ChatController());
+
     return Scaffold(
       appBar: AppBar(
-        title: Text("Select Contact"),
+        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+        title: Text(
+          "Select Contact",
+          style: Theme.of(context).textTheme.headlineMedium,
+        ),
         actions: [
           Obx(
             () => IconButton(
@@ -38,45 +38,122 @@ class ContactPage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(10),
-        child: ListView(
+        child: Column(
           children: [
+            // Search bar
             Obx(() => isSearchEnable.value ? Contactsearch() : SizedBox()),
-            SizedBox(height: 10),
-            NewContacttile(
-              btnName: "New Contact",
-              icon: Icons.person_add,
-              ontap: () {},
-            ),
-            SizedBox(height: 10),
-            NewContacttile(
-              btnName: "New Group ",
-              icon: Icons.group_add,
-              ontap: () {},
-            ),
-            SizedBox(height: 10),
-            Row(children: [Text("Contacts with Peoples")]),
-            SizedBox(height: 10),
+
+            // New Contact and New Group buttons
             Column(
-              children:
-                  contactController.userList
-                      .map(
-                        (e) => InkWell(
-                          onTap: () {
-                            Get.to(ChatPage(userModel: e));
-                            // Get.toNamed("/SingleChatPage", arguments: e);
-                          },
-                          child: ChatTile(
-                            imageUrl:
-                                e.profileImage ?? AssetsImage.defaultProfileUrl,
-                            name: e.name ?? "User",
-                            lastChat: e.about ?? "have a Good Day",
-                            lastTime: "",
+              children: [
+                SizedBox(height: 10),
+                NewContacttile(
+                  btnName: "New Contact",
+                  icon: Icons.person_add,
+                  ontap: () {
+                    // Add new contact functionality
+                    print("New Contact tapped");
+                  },
+                ),
+                SizedBox(height: 10),
+                NewContacttile(
+                  btnName: "New Group",
+                  icon: Icons.group_add,
+                  ontap: () {
+                    // Add new group functionality
+                    print("New Group tapped");
+                  },
+                ),
+                SizedBox(height: 20),
+
+                // Header for contacts list
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "Contacts with Peoples",
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 10),
+              ],
+            ),
+
+            // Contacts List
+            Expanded(
+              child: Obx(
+                () =>
+                    contactController.userList.isEmpty
+                        ? Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.contacts_outlined,
+                                size: 64,
+                                color: Theme.of(context).colorScheme.secondary,
+                              ),
+                              SizedBox(height: 16),
+                              Text(
+                                "No contacts found",
+                                style: Theme.of(context).textTheme.titleMedium,
+                              ),
+                              SizedBox(height: 8),
+                              Text(
+                                "Add some contacts to start chatting",
+                                style: Theme.of(
+                                  context,
+                                ).textTheme.bodyMedium?.copyWith(
+                                  color:
+                                      Theme.of(context).colorScheme.secondary,
+                                ),
+                              ),
+                            ],
                           ),
+                        )
+                        : ListView.builder(
+                          itemCount: contactController.userList.length,
+                          itemBuilder: (context, index) {
+                            final user = contactController.userList[index];
+                            return Padding(
+                              padding: const EdgeInsets.only(bottom: 5),
+                              child: InkWell(
+                                onTap: () {
+                                  // Navigate to chat page
+                                  Get.to(() => ChatPage(userModel: user));
+                                },
+                                borderRadius: BorderRadius.circular(20),
+                                child: ChatTile(
+                                  imageUrl:
+                                      user.profileImage ??
+                                      AssetsImage.defaultProfileUrl,
+                                  name: user.name ?? "Unknown User",
+                                  lastChat:
+                                      user.about ??
+                                      "Hey there! I'm using this app.",
+                                  lastTime: '',
+                                ),
+                              ),
+                            );
+                          },
                         ),
-                      )
-                      .toList(),
+              ),
             ),
           ],
+        ),
+      ),
+
+      // Floating Action Button for quick add contact
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Quick add contact functionality
+          print("Quick add contact");
+        },
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        child: Icon(
+          Icons.person_add,
+          color: Theme.of(context).colorScheme.onPrimary,
         ),
       ),
     );
